@@ -1,0 +1,84 @@
+.menuBar{
+    background: rgba(0, 90, 0, 0.9);
+    text-align: center;
+}
+
+.menuBar ul{
+    display: inline-flex;
+    list-style: none;
+    color: white;
+    margin: 0px;
+    font-size: 14px;
+}
+.menuBar ul li{
+    margin: 15px;
+    margin-right: 0px;
+    padding: 0px 5px 10px 5px;
+    cursor: pointer;
+}
+.menuBar i{
+    display: inline-block;
+    position: relative;
+    top: 5px;
+}
+.menuBar .active, .menuBar ul li:hover{
+    background: #2bab0d;
+    border-radius: 3px;
+}
+.subMenu1{
+    display: none;
+    z-index: 100;
+}
+.subMenu1 i{
+        display: inline-block;
+        position: relative;
+        top: -1px;
+}
+.menuBar ul li:hover .subMenu1{
+    display: block;
+    position: absolute;
+    background: rgb(0, 100, 0);
+    padding: 0px;
+    margin-top: 10px;
+    
+    
+}
+
+.menuBar ul li:hover .subMenu1 ul{
+    display: block;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.menuBar ul li:hover .subMenu1 ul li{
+    margin-left: 0px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+    width: 200px !important;
+}
+
+.menuBar ul li:hover .subMenu1 ul li:last-child{
+    border-bottom: none;
+}
+.menuBar ul li:hover .subMenu1 ul li:hover{
+    color: #b2ff00;
+}
+.subMenu1 i{
+    float: right;
+}
+.subMenu2{
+    display: none;
+    z-index: 100;
+}
+
+.hoverMe:hover .subMenu2{
+    position: absolute;
+    display: block;
+    margin-top: -44px;
+    margin-left: 188px;
+    background: rgb(0, 100, 0);
+    width: 100%;
+}
