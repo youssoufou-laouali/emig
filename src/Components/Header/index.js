@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Cheveron from './Icon'
 import Mobile from './Mobile'
+import {firebase} from '../Firebase'
 import logoAemnEmig from '../../images/logoAemnEmig.png'
 import './style.css'
+
 
 const Header = () => {
     const [openMobile, setOpenMobile] = useState(false)
@@ -10,10 +12,11 @@ const Header = () => {
         setOpenMobile(!openMobile)
     }
     
+    
     return (
-        <div style={{position:'fixed', top:0, width:'100%', zIndex:500}}>
+        <div style={{position:'fixed', top:0, width:'100%', zIndex:100}}>
             
-            <div className='menuBar'>
+            <div className='menuBar hide-on-small-only'>
                 <ul>
                     <li className='active'>Activités de l'AEMN-EMIG <Cheveron name='arrow_drop_down' />
                         <div className='subMenu1'>
@@ -128,7 +131,7 @@ const Header = () => {
             </div>
             <div style={{position:'absolute', left:10, top:20, color:'white', cursor: 'pointer'}} onClick={()=>handleMobile()}><a class="btn-floating pulse" style={{ backgroundColor:'rgb(0,200,0)'}}><Cheveron name='menu' /></a></div>
             <div style={{position:'fixed', right:5, top: 0, backgroundColor:'rgba(255,255,255,1)', borderRadius:20, border:'2px dotted green'}} ><img src={logoAemnEmig} alt="" /></div>
-            {openMobile && <Mobile handleMobile={handleMobile} />}
+            {openMobile && <Mobile handleMobile={handleMobile}/>}
         </div>
     )
 }

@@ -89,3 +89,18 @@ li{
     height: 100vh;
     z-index: 499;
 }
+
+.subMenu2-mobile li{
+    transition: .5s;
+}
+
+.subMenu2-mobile li:hover{
+    color: rgb(115, 255, 72);
+}
+
+#CONNECTER{
+    background-color: rgba(224, 248, 217, 0.9);
+    text-align: center;
+    border-radius: 20px;
+    color: white
+}

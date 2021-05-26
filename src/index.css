@@ -41,11 +41,10 @@ code {
   font-size: 18px;
 }
 
-.collapsible-body ul li{
+.popout .collapsible-body ul li{
   list-style: square inside !important;
   color: rgba(0, 0, 0, 0.6);
   font-size: 18px;
-  
 }
 
 .collapsible-header h5{
@@ -54,4 +53,19 @@ code {
   margin: auto;
   text-transform: uppercase;
   font-size: 20px;
+}
+
+.mt{
+  margin-top: 60px;
+  padding: 30px;
+}
+
+.spiner{
+  background-color: rgba(0, 0, 0, 0.322);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

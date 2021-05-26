@@ -1,22 +1,92 @@
-import React,{ useEffect} from 'react'
+import React,{ useState, useEffect} from 'react'
 import M from "materialize-css";
 import './style.css'
+import Modal from '../../Modal'
 import Cheveron from '../Icon'
+import { useHistory} from 'react-router-dom'
+import firebase from '../../Firebase'
 
 const Mobile = ({handleMobile}) => {
+
+    const [mod, setMod] = useState(false)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const handleModale=()=>{
+        setMod(!mod)
+    }
+    let history = useHistory();
 
     useEffect(() => {
         let elems = document.querySelectorAll('.collapsible');
          M.Collapsible.init(elems, {accordion:true});
          let spp= document.querySelector('.Mobile');
-         console.log(spp);
          spp.addEventListener('click', (e)=>{
-            e.stopPropagation()
+           e.stopPropagation()
+
+           if(e.target.textContent=='Se connecter'){
+               handleModale()
+               let aaa= document.getElementById('CONNECTER')
+               aaa.addEventListener('click', (e)=>{
+                   e.stopPropagation()
+               })
+           }
          })
     }, [])
 
+    const handleConnecte=(e)=> {
+        e.preventDefault()
+        firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(e=>{
+            if(e.user.getIdToken()){
+                localStorage.setItem('ID', e.user.getIdToken())
+                localStorage.setItem('email', e.user.email)
+                handleModale()
+                handleMobile()
+                history.push("/add");
+            }else{
+                localStorage.clear();
+            }
+        })
+        .catch(errors=>{
+            console.log(errors);
+            localStorage.clear();
+        })
+    }
+
+    
+
     return (
         <div className="Mobile-Container" onClick={()=>handleMobile()}>
+            {
+                mod && (
+                    <Modal close={handleModale}>
+                        <div id='CONNECTER'>
+                            <h3>Se connecter</h3>
+                            <div class="row">
+                                <form class="col s8" onSubmit={(e)=>handleConnecte(e)}>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">email</i>
+                                            <input id="icon_prefix" type="email" value={email} onChange={(e)=>setEmail(e.target.value)} class="validate" />
+                                            <label for="icon_prefix">Email</label>
+                                        </div>
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">remove_red_eye</i>
+                                            <input id="icon_telephone" value={password} onChange={(e)=> setPassword(e.target.value)} type="password" class="validate" />
+                                            <label for="icon_telephone">Mot de Passe</label>
+                                        </div>
+                                        <div>
+                                            <button class="btn waves-effect waves-light" type="submit">Envoyer
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </Modal>
+                )
+            }
         <div className='Mobile'>
             
             <div className='menuBarMobile'>
@@ -25,7 +95,7 @@ const Mobile = ({handleMobile}) => {
                         <div>
                             <ul className='collapsible'>
                                 <li className='hoverMe collapsible-header'><span className='labbel2' > Présentation à la mosqué <Cheveron name='arrow_drop_down' /> </span>
-                                    <div className='collapsible-body'>
+                                    <div className='subMenu2-mobile collapsible-body'>
                                         <ul>
                                             <li>Aquida</li>
                                             <li>Erreur de priere</li>
@@ -42,7 +112,7 @@ const Mobile = ({handleMobile}) => {
                         <div>
                             <ul className='collapsible'>
                                 <li className='hoverMe collapsible-header'><span className='labbel2'>EMIG <Cheveron name='arrow_drop_down' /></span>
-                                    <div className='collapsible-body'>
+                                    <div className='subMenu2-mobile collapsible-body'>
                                         <ul>
                                             <li>Cycle Technicien Superieur</li>
                                             <li>Cycle Ingénieur</li>
@@ -127,6 +197,13 @@ const Mobile = ({handleMobile}) => {
                                 <li><span className='labbel2'>Première D</span></li>
                                 <li><span className='labbel2'>Terminale C</span></li>
                                 <li><span className='labbel2'>Terminale D</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><span className='labbel'>Administration</span> 
+                        <div>
+                            <ul>
+                                <li><span className='labbel2'>Se connecter</span></li>
                             </ul>
                         </div>
                     </li>
