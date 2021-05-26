@@ -1,0 +1,50 @@
+[debug] [2021-05-26T15:32:37.508Z] ----------------------------------------------------------------------
+[debug] [2021-05-26T15:32:37.512Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\issi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-05-26T15:32:37.513Z] CLI Version:   9.11.0
+[debug] [2021-05-26T15:32:37.513Z] Platform:      win32
+[debug] [2021-05-26T15:32:37.513Z] Node Version:  v14.16.0
+[debug] [2021-05-26T15:32:37.515Z] Time:          Wed May 26 2021 16:32:37 GMT+0100 (heure normale d’Afrique de l’Ouest)
+[debug] [2021-05-26T15:32:37.515Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-05-26T15:32:37.529Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-26T15:32:37.529Z] > authorizing via signed-in user (youssoufoulaoualibaraou@gmail.com)
+[debug] [2021-05-26T15:32:37.530Z] [iam] checking project aemn-emig for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2021-05-26T15:32:37.534Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/aemn-emig:testIamPermissions  
+ {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2021-05-26T15:32:55.497Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 26 May 2021 15:32:55 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=641","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-26T15:32:55.502Z] > refreshing access token with scopes: []
+[debug] [2021-05-26T15:32:55.503Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-26T15:33:00.565Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 26 May 2021 15:32:58 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-26T15:33:00.694Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/aemn-emig [none]
+[debug] [2021-05-26T15:33:23.144Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/aemn-emig 200
+[debug] [2021-05-26T15:33:23.145Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/aemn-emig {"projectId":"aemn-emig","projectNumber":"600173104514","displayName":"emig","name":"projects/aemn-emig","resources":{"hostingSite":"aemn-emig","storageBucket":"aemn-emig.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'aemn-emig'...
+[info] 
+[info] i  deploying storage, firestore, hosting 
+[debug] [2021-05-26T15:33:23.160Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-26T15:33:23.161Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-26T15:33:29.076Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Wed, 26 May 2021 15:33:26 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-26T15:33:29.205Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/aemn-emig  
+ 
+[debug] [2021-05-26T15:33:36.416Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 26 May 2021 15:33:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2021-05-26T15:33:36.422Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/aemn-emig:test  
+ {"source":{"files":[{"name":"storage.rules","content":"rules_version = '2';\nservice firebase.storage {\n  match /b/{bucket}/o {\n    match /{allPaths=**} {\n      allow read, write: if request.auth!=null;\n    }\n  }\n}\n"}]}}
+[debug] [2021-05-26T15:33:46.672Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 26 May 2021 15:33:47 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] +  firebase.storage: rules file storage.rules compiled successfully 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2021-05-26T15:33:46.682Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/aemn-emig:test  
+ {"source":{"files":[{"name":"firestore.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write: if false;\n    }\n  }\n}"}]}}
+[debug] [2021-05-26T15:34:02.274Z] Error: socket hang up
+    at connResetException (internal/errors.js:607:14)
+    at TLSSocket.socketOnEnd (_http_client.js:493:23)
+    at TLSSocket.emit (events.js:327:22)
+    at TLSSocket.EventEmitter.emit (domain.js:467:12)
+    at endReadableNT (internal/streams/readable.js:1327:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+[error] 
+[error] Error: Server Error. socket hang up
