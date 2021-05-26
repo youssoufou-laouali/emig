@@ -14,7 +14,5 @@ import "firebase/storage"
         };
         firebase.initializeApp(firebaseConfig)
 
-        let db = firebase.firestore();
-        let storage = firebase.storage();
 
 export default firebase;
